@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnovaManga S.A.S. - Gestión de Inventario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Bienvenido a InnovaManga S.A.S.</h1>
+    <div class="menu">
+        <a href="{{ url_for('agregar_comic') }}" class="btn">Agregar Cómic</a>
+        <a href="{{ url_for('mostrar_inventario') }}" class="btn">Ver Inventario</a>
+    </div>
+</body>
+</html>

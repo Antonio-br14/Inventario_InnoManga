@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario de Cómics - InnovaManga S.A.S.</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Inventario de Cómics</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Autor</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for comic in comics %}
+            <tr>
+                <td>{{ comic[1] }}</td>
+                <td>{{ comic[2] }}</td>
+                <td>{{ comic[3] }}</td>
+                <td>
+                    <form action="{{ url_for('eliminar_comic', id=comic[0]) }}" method="POST">
+                        <button type="submit" class="btn eliminar">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}" class="btn">Volver al inicio</a>
+</body>
+</html>

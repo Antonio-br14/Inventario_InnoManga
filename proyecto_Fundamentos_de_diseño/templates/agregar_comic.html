@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Agregar Producto - InnovaManga S.A.S.</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Agregar Nuevo Producto</h1>
+        <form action="{{ url_for('agregar_comic') }}" method="POST">
+            <label for="nombre">Nombre del cómic:</label>
+            <input type="text" name="nombre" required>
+        
+            <label for="autor">Autor del cómic:</label>
+            <input type="text" name="autor" required>
+        
+            <label for="stock">Stock disponible:</label>
+            <input type="number" name="stock" required>
+        
+            <button type="submit" class="btn">Agregar Cómic</button>
+        </form>        
+        <a href="{{ url_for('index') }}" class="back-link">Volver al inicio</a>
+    </div>
+</body>
+</html>
